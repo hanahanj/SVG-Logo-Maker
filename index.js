@@ -1,9 +1,12 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const jest = require('jest');
-// const generateLogo = require('generateLogo.js');
+const {Circle, Square, Triangle} = require('./shapes.js');
+
 
 // array of prompts to generate logo
+function prompts() {
+
 inquirer
 .prompt([
     {
@@ -32,10 +35,45 @@ inquirer
   
 ])
 .then((inquirerData) => {
+if  (inquirerData.shape === 'Circle'){
 
-const filename = `logo.svg`;
-//writes README
-fs.writeFile(filename, generateLogo(inquirerData, null, '\t'), (err) =>
+    let shape = new Circle(inquirerData.name, inquirerData.textColor,inquirerData.shapeColor);
+    // console.log(inquirerData);
+    // console.log(shape);
+    const logo = shape.render();
+    console.log(logo);
+
+fs.writeFile('logo.svg',logo, (err) =>
       err ? console.log(err) : console.log('Success!')
     );
+} else if (inquirerData.shape === 'Square'){
+    let shape = new Square(inquirerData.name, inquirerData.textColor,inquirerData.shapeColor);
+    // console.log(inquirerData);
+    // console.log(shape);
+    const logo = shape.render();
+    console.log(logo);
+
+fs.writeFile('logo.svg',logo, (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+
+} else {
+    let shape = new Triangle(inquirerData.name, inquirerData.textColor,inquirerData.shapeColor);
+    // console.log(inquirerData);
+    // console.log(shape);
+    const logo = shape.render();
+    console.log(logo);
+
+fs.writeFile('logo.svg',logo, (err) =>
+      err ? console.log(err) : console.log('Success!')
+    );
+
+}
+
   });
+
+
+
+};
+
+prompts();
