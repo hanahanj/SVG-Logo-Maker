@@ -38,5 +38,6 @@ THEN I am shown a 300x200 pixel image that matches the criteria I entered
   If you have any question about the repo you can contact me via jonathan.hanahan@gmail.com.
   You can also find more of my work at[hanahanj](https://github.com/hanahanj).
 
+![Repo](https://github.com/hanahanj/SVG-Logo-Maker)
 
 ![Screen Recording](https://drive.google.com/file/d/1-OgV1D4V5DVH2SQ0f0izWCqO9-LJ3xsJ/view)
